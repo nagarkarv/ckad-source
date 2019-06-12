@@ -1,0 +1,12 @@
+# Specifiy  a base image
+FROM node:alpine
+
+WORKDIR /usr/app/simpleweb
+
+COPY ./package.json ./package.json
+
+RUN npm install
+
+COPY ./ ./
+
+CMD ["npm", "start"]
